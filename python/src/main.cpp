@@ -942,6 +942,7 @@ PYBIND11_MODULE(ncnn, m)
     py::arg("index"), py::arg("creator"), py::arg("destroyer"))
 #if NCNN_STRING
     .def("load_param", (int (Net::*)(const DataReader&)) & Net::load_param, py::arg("dr"))
+    .def("load_param_mem", (int(Net::*)(const char*)) & Net::load_param_mem, py::arg("mem"))
 #endif // NCNN_STRING
     .def("load_param_bin", (int (Net::*)(const DataReader&)) & Net::load_param_bin, py::arg("dr"))
     .def("load_model", (int (Net::*)(const DataReader&)) & Net::load_model, py::arg("dr"))
@@ -952,6 +953,7 @@ PYBIND11_MODULE(ncnn, m)
 #endif // NCNN_STRING
     .def("load_param_bin", (int (Net::*)(const char*)) & Net::load_param_bin, py::arg("protopath"))
     .def("load_model", (int (Net::*)(const char*)) & Net::load_model, py::arg("modelpath"))
+    .def("load_model_mem", [](Net& net, const char* mem) { const unsigned char* mem_array = (const unsigned char*) mem; net.load_model(mem_array); }, py::arg("mem"))
 #endif // NCNN_STDIO
 
     .def("clear", &Net::clear)
