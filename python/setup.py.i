@@ -16,7 +16,7 @@ except ImportError:
 if sys.version_info < (3, 0):
     sys.exit("Sorry, Python < 3.0 is not supported")
 
-requirements = ["numpy", "tqdm", "requests", "portalocker", "opencv-python"]
+requirements = ["numpy", "tqdm", "requests", "portalocker", "opencv-python-headless"]
 
 setup(
     name="ncnn",
