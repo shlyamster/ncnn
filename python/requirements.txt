@@ -2,4 +2,4 @@ numpy
 tqdm
 requests
 portalocker
-opencv-python
+opencv-python-headless
