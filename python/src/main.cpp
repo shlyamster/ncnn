@@ -942,7 +942,6 @@ PYBIND11_MODULE(ncnn, m)
     py::arg("index"), py::arg("creator"), py::arg("destroyer"))
 #if NCNN_STRING
     .def("load_param", (int (Net::*)(const DataReader&)) & Net::load_param, py::arg("dr"))
-    .def("load_param_mem", (int(Net::*)(const char*)) & Net::load_param_mem, py::arg("mem"))
 #endif // NCNN_STRING
     .def("load_param_bin", (int (Net::*)(const DataReader&)) & Net::load_param_bin, py::arg("dr"))
     .def("load_model", (int (Net::*)(const DataReader&)) & Net::load_model, py::arg("dr"))
