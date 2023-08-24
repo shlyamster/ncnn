@@ -117,7 +117,7 @@ class CMakeBuild(build_ext):
 if sys.version_info < (3, 0):
     sys.exit("Sorry, Python < 3.0 is not supported")
 
-requirements = ["numpy", "tqdm", "requests", "portalocker", "opencv-python"]
+requirements = ["numpy", "tqdm", "requests", "portalocker", "opencv-python-headless"]
 
 with io.open("README.md", encoding="utf-8") as h:
     long_description = h.read()
